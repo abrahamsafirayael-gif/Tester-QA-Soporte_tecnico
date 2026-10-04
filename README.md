@@ -52,8 +52,8 @@ Fundamentals and principles. Roles and responsibilities. Planning and estimation
 * English: Fluent (reading proficiency; speaking skills improving). Primarily reading technical documentation.
 
 # Contact me to learn more about my profile
-As an avid enthusiast, I am sharing my contact details so you can get in touch to arrange an interview and see how I can actively contribute to your team—from anywhere in the world.
-.
+As an avid enthusiast, I am sharing my contact details so you can get in touch to arrange an interview and see how I can actively contribute to your team—from anywhere in the world. (I assure you that three months is enough for you to determine that my joining the team has been a success ;))
+
 * 💼 **LinkedIn:** [linkedin.com/in/safira-yael-abraham](https://www.linkedin.com/in/safira-yael-abraham)
 * 📧 **Email:** abrahamsafirayael@gmail.com
 * 📁 **Portafolio QA:** Portafolio Tester QA Manual
