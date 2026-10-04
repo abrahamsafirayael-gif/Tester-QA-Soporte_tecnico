@@ -51,4 +51,14 @@ Fundamentals and principles. Roles and responsibilities. Planning and estimation
 * Spanish: Native.
 * English: Fluent (reading proficiency; speaking skills improving). Primarily reading technical documentation.
 
-Fundamentals and principles. Roles and responsibilities. Planning and estimation (Planning Poker and T-shirt sizing). Sprint management, daily meetings, and project progress evaluation. EEAT “Las Delicias”, Agrotechnical Education School (Secondary) 2016–2021
+# Contact me to learn more about my profile
+As an avid enthusiast, I am sharing my contact details so you can get in touch to arrange an interview and see how I can actively contribute to your team—from anywhere in the world.
+.
+* 💼 **LinkedIn:** [linkedin.com/in/safira-yael-abraham](https://www.linkedin.com/in/safira-yael-abraham)
+* 📧 **Email:** abrahamsafirayael@gmail.com
+* 📁 **Portafolio QA:** Portafolio Tester QA Manual
+
+
+
+
+
