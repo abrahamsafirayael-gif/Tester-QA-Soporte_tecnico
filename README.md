@@ -51,5 +51,4 @@ Fundamentals and principles. Roles and responsibilities. Planning and estimation
 * Spanish: Native.
 * English: Fluent (reading proficiency; speaking skills improving). Primarily reading technical documentation.
 
-SCRUM, Edutin Academy April 2025 – May 2025.
 Fundamentals and principles. Roles and responsibilities. Planning and estimation (Planning Poker and T-shirt sizing). Sprint management, daily meetings, and project progress evaluation. EEAT “Las Delicias”, Agrotechnical Education School (Secondary) 2016–2021
