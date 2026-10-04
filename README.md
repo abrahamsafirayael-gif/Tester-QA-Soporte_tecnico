@@ -16,7 +16,7 @@ training, all IT areas are absolutely exciting for me.
 
 # Work experience
 QA Tester & eCommerce Technical Support | Ominim
-Ominim, Pergamino, Buenos Aires | Octubre 2025 – January 2026 | Ref: Rocío Pubill.
+Ominim, Pergamino, Buenos Aires | Octubre 2025 – January 2026 | Ref: Rocío Pubill. (Number available upon request).
 
 * Customer Service & Technical Support: Receiving, diagnosing, and resolving operational and technical issues reported by users
 on the management platform and digital channels.
