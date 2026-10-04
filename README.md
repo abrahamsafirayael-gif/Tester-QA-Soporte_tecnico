@@ -24,5 +24,32 @@ on the management platform and digital channels.
 * API & Database Testing: Validating REST APIs using Postman (endpoints, HTTP responses, and JSON) and running SQL queries to verify data consistency and troubleshoot errors.
 * Operational Management & Automation: Developing initial Python/Selenium scripts and tracking projects
 within a Scrum framework.
-Project planning and requirements gathering (networks, cash management—Main Solution system).
-Team management, commercial strategy, and inventory updates. Founder of “Miraki Shop.”
+
+# SKILLS AND HIGHLIGHTS (top-tier :))
+While I possess extensive experience—as detailed in my CV—one area that has allowed me to broaden my knowledge and apply practical skills (building upon my API testing with Postman using public APIs) is SQL: the structured query language designed specifically for interacting with relational database management systems (RDBMS).
+My entire self-directed learning journey—including the use of clauses and functions, table creation, and more—has centered on the Northwind database, which has been a cornerstone of my practical training.
+It is worth highlighting this as part of my portfolio, as I frequently revisit these exercises as a hobby to reinforce my knowledge, apply what I have learned, and continually pick up new skills.
+
+# PROFESSIONAL TRAINING
+- University Diploma in Management Informatics – National University of the Litoral (UNL) (Start: Feb 2027).
+- Cybersecurity, Cisco Networking Academy | September 2026 – Present.
+- DataLab, Unicorn Academy | August 2026 – September 2026.
+- Professional Testing Master, National Technological University (UTN) 2024–2025.
+- Testing principles and fundamentals. Test types. SQL. API. Postman. JSON.
+- QA Tester, Canvas by Instructure – "ITschool" (IT training courses) (April 2025).
+Test cases. Bug reporting. Test case matrix. Defect matrix. Software testing tools.
+- Python, Canvas by Instructure – "ITschool" (IT training courses) May 2025 – Present.
+Data types, variables, strings, conditionals, and operators. Exceptions, modules, and testing/debugging techniques. Django REST framework for creating powerful services.
+- Java, Canvas by Instructure – "ITschool" (IT training courses) May 2025 – Present.
+Flow control and data structures. Object-Oriented Programming (OOP). Graphical interfaces and data access. Development tools and best practices.
+Selenium, Tester Testarudo Academy May 2025 – Present.
+- SCRUM, Edutin Academy (April 2025–May 2025).
+Fundamentals and principles. Roles and responsibilities. Planning and estimation (Planning Poker and T-shirt sizing). Sprint management, daily meetings, and project progress assessment.
+- EEAT “Las Delicias,” Agrotechnical Education School (Secondary Level) 2016–2021.
+
+# Languages
+* Spanish: Native.
+* English: Fluent (reading proficiency; speaking skills improving). Primarily reading technical documentation.
+
+SCRUM, Edutin Academy April 2025 – May 2025.
+Fundamentals and principles. Roles and responsibilities. Planning and estimation (Planning Poker and T-shirt sizing). Sprint management, daily meetings, and project progress evaluation. EEAT “Las Delicias”, Agrotechnical Education School (Secondary) 2016–2021
