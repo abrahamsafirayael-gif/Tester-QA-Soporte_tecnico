@@ -15,7 +15,7 @@ Estudio **Ciberseguridad y Redes (Cisco)** y me preparo para ingresar a la **Tec
 ## 📌 Datos de Contacto y Ubicación
 
 - **Ubicación:** Pergamino, Buenos Aires (B2700), Argentina
-- **Teléfono / WhatsApp:** [+549 (0343) 522-4418](tel:+54903435224418)
+- **Teléfono / WhatsApp:** [+54 9 (0343) 522-4418](tel:+54903435224418)
 - **Email:** [abrahamsafirayael@gmail.com](mailto:abrahamsafirayael@gmail.com)
 - **Disponibilidad:** Inmediata | Full Time
 - **Redes:** [LinkedIn](https://linkedin.com) | [GitHub](https://github.com)
