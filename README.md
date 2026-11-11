@@ -1,64 +1,127 @@
-# Tester-QA-Soporte_tecnico
-Hello! My name is Safira, I currently reside in Pergamino (B2700), and I invite you to take a closer look at my portfolio. Thank you very much for your time, you are completely welcome.
+# Safira Yael Abraham | QA Tester
 
-# Trajectory
-My career dates back to 2023, when thanks to an older brother I discovered this beautiful vocation... Being a bug detective!
-This is how I progressively built a solid career with extensive knowledge of application testing, SQL, APIs with Postman, Python, Selenium, and currently strengthening my knowledge with Cybersecurity courses.
-I consider the entire IT area exciting, for this reason, my training is constant and I would like to be able to share it with you.
+**QA Tester | Testing Manual | APIs REST | SQL | Automatización con Python y Selenium**
 
-# About me
-QA Tester and Technical Support Analyst with solid training in software testing, resolution
-incidents and user service. Skilled in designing test cases, diagnosing errors in databases
-data (SQL) and API validation (Postman). I have experience in digital channel management, communication
-effective and initial automation (Python, Selenium). Analytical and empathetic profile, aimed at ensuring
-product quality and provide efficient solutions to the end customer. I love being constant
-training, all IT areas are absolutely exciting for me.
+Profesional de QA con formación en testing de software (UTN) y experiencia práctica en diseño y ejecución de casos de prueba, validación de APIs REST, consultas SQL y gestión de incidencias.
 
-# Work experience
-QA Tester & eCommerce Technical Support | Ominim
-Ominim, Pergamino, Buenos Aires | Octubre 2025 – January 2026 | Ref: Rocío Pubill. (Number available upon request).
+Este repositorio reúne proyectos prácticos, documentación técnica y ejercicios orientados al aseguramiento de la calidad del software. Mi trabajo se centra en la detección de defectos, la validación funcional y la consistencia de los datos.
 
-* Customer Service & Technical Support: Receiving, diagnosing, and resolving operational and technical issues reported by users
-on the management platform and digital channels.
-* Test Design & Execution: Planning manual tests (functional and integration), creating test cases and coverage matrices, and bug reporting/tracking.
-* API & Database Testing: Validating REST APIs using Postman (endpoints, HTTP responses, and JSON) and running SQL queries to verify data consistency and troubleshoot errors.
-* Operational Management & Automation: Developing initial Python/Selenium scripts and tracking projects
-within a Scrum framework.
+---
 
-# SKILLS AND HIGHLIGHTS (top-tier :))
-While I possess extensive experience—as detailed in my CV—one area that has allowed me to broaden my knowledge and apply practical skills (building upon my API testing with Postman using public APIs) is SQL: the structured query language designed specifically for interacting with relational database management systems (RDBMS).
-My entire self-directed learning journey—including the use of clauses and functions, table creation, and more—has centered on the Northwind database, which has been a cornerstone of my practical training.
-It is worth highlighting this as part of my portfolio, as I frequently revisit these exercises as a hobby to reinforce my knowledge, apply what I have learned, and continually pick up new skills.
+## Perfil profesional
 
-# PROFESSIONAL TRAINING
-- University Diploma in Management Informatics – National University of the Litoral (UNL) (Start: Feb 2027).
-- Cybersecurity, Cisco Networking Academy | September 2026 – Present.
-- DataLab, Unicorn Academy | August 2026 – September 2026.
-- Professional Testing Master, National Technological University (UTN) 2024–2025.
-- Testing principles and fundamentals. Test types. SQL. API. Postman. JSON.
-- QA Tester, Canvas by Instructure – "ITschool" (IT training courses) (April 2025).
-Test cases. Bug reporting. Test case matrix. Defect matrix. Software testing tools.
-- Python, Canvas by Instructure – "ITschool" (IT training courses) May 2025 – Present.
-Data types, variables, strings, conditionals, and operators. Exceptions, modules, and testing/debugging techniques. Django REST framework for creating powerful services.
-- Java, Canvas by Instructure – "ITschool" (IT training courses) May 2025 – Present.
-Flow control and data structures. Object-Oriented Programming (OOP). Graphical interfaces and data access. Development tools and best practices.
-Selenium, Tester Testarudo Academy May 2025 – Present.
-- SCRUM, Edutin Academy (April 2025–May 2025).
-Fundamentals and principles. Roles and responsibilities. Planning and estimation (Planning Poker and T-shirt sizing). Sprint management, daily meetings, and project progress assessment.
-- EEAT “Las Delicias,” Agrotechnical Education School (Secondary Level) 2016–2021.
+Cuento con experiencia en testing manual, análisis de requerimientos, documentación de pruebas y validación de servicios mediante Postman. Complemento estas competencias con consultas SQL y automatización inicial utilizando Python y Selenium.
 
-# Languages
-* Spanish: Native.
-* English: Fluent (reading proficiency; speaking skills improving). Primarily reading technical documentation.
+Trabajo con Git y GitHub para el control de versiones y la organización de proyectos. También cuento con experiencia en operaciones de comercio electrónico y soporte a usuarios.
 
-# Contact me to learn more about my profile
-As an avid enthusiast, I am sharing my contact details so you can get in touch to arrange an interview and see how I can actively contribute to your team—from anywhere in the world. (I assure you that three months is enough for you to determine that my joining the team has been a success ;))
+Actualmente continúo mi formación en ciberseguridad y redes, mientras desarrollo mis conocimientos en automatización y análisis de datos.
 
-* 💼 **LinkedIn:** [linkedin.com/in/safira-yael-abraham](https://www.linkedin.com/in/safira-yael-abraham)
-* 📧 **Email:** abrahamsafirayael@gmail.com
-* 📁 **Portafolio QA:** Portafolio Tester QA Manual
+## Competencias técnicas
 
+| Área | Herramientas y conocimientos |
+|---|---|
+| Testing manual | Diseño de casos de prueba, formato Gherkin, pruebas UAT, ejecución y reporte de incidencias |
+| Testing de APIs | Postman, REST, JSON, endpoints y códigos de respuesta HTTP |
+| Bases de datos | SQL, consultas, validación de datos y transacciones |
+| Automatización | Python, Selenium, pandas y Java |
+| Control de versiones | Git y GitHub |
+| Metodologías ágiles | Scrum, planificación de sprints y seguimiento de tareas |
+| Gestión de incidencias | Jira, Notion y documentación de defectos |
+| Herramientas complementarias | Google Colab, VS Code y Claude |
 
+---
 
+## Proyectos QA
 
+### 1. Millanel Cosmética — Testing de E-commerce
 
+Proyecto de diseño y ejecución de pruebas sobre una plataforma de comercio electrónico.
+
+- Diseño de casos de prueba funcionales.
+- Documentación de 27 casos de prueba.
+- Registro de 10 incidencias.
+- Priorización de defectos mediante metodología MoSCoW.
+- Análisis de escenarios y criterios de aceptación.
+
+### 2. Testing de APIs — FakeStoreAPI
+
+Validación de servicios REST mediante Postman.
+
+- Construcción de una colección de pruebas.
+- Validación de más de 7 endpoints.
+- Verificación de códigos de respuesta HTTP.
+- Inspección de estructuras JSON.
+- Comprobación de respuestas y comportamiento de los servicios.
+
+### 3. Automatización web — Python y Selenium
+
+Desarrollo de pruebas automatizadas sobre flujos de compra.
+
+- Implementación de 2 pruebas automatizadas.
+- Automatización de escenarios de navegación y compra.
+- Desarrollo y ejecución desde Visual Studio Code.
+- Uso de Python y Selenium.
+
+### 4. Proyecto Andina S.A. — Generación y validación de datos
+
+Proyecto en desarrollo orientado a la generación de conjuntos de datos y validación de información mediante SQL y Python.
+
+- Generación de un conjunto de aproximadamente 2.000 registros.
+- Inyección controlada de errores para escenarios de prueba.
+- Incorporación de datos de referencia.
+- Validaciones mediante SQL.
+- Desarrollo de pruebas para identificar inconsistencias.
+
+---
+
+## Experiencia profesional
+
+### QA Tester y Operaciones de E-commerce
+**Ominim — Pergamino, Buenos Aires | Octubre 2025 – Diciembre 2025**
+
+- Diseño y ejecución de casos de prueba sobre Main Solution.
+- Análisis de requerimientos y documentación mediante Gherkin.
+- Reporte de incidencias con pasos de reproducción y evidencias.
+- Validación de APIs REST mediante Postman.
+- Consultas SQL para verificar pedidos, stock y precios.
+- Participación en operaciones y gestión de comercio electrónico.
+
+### Vendedora Semi-Senior y Soporte Comercial
+**EUROMODA — Pergamino | Julio 2026 – Actualidad**
+
+- Atención y asesoramiento comercial.
+- Participación en eventos de venta y operaciones de alto volumen.
+- Soporte en documentación comercial.
+- Organización y gestión de documentación confidencial.
+
+---
+
+## Formación académica y certificaciones
+
+- **Professional Testing Master (SQL / API)** — Universidad Tecnológica Nacional (UTN), 2024–2025.
+- **DataLab** — Unicorn Academy, agosto–septiembre 2026.
+- **Ciberseguridad** — Cisco Networking Academy, septiembre 2026 – en curso.
+- **Tecnicatura Universitaria en Informática de Gestión** — Universidad Nacional del Litoral (UNL), ingreso previsto para febrero de 2027.
+
+---
+
+## Idiomas
+
+- Español: nativo.
+- Inglés: lectura de documentación técnica.
+
+---
+
+## Contacto
+
+**Safira Yael Abraham**
+
+- Correo electrónico: abrahamsafirayael@gmail.com
+- LinkedIn: [linkedin.com/in/safira-yael-abraham](https://www.linkedin.com/in/safira-yael-abraham)
+- GitHub: [abrahamsafirayael-gif](https://github.com/abrahamsafirayael-gif)
+
+**Disponibilidad:** Inmediata | Jornada completa.
+
+---
+
+*Repositorio de proyectos prácticos y documentación técnica en aseguramiento de calidad de software.*
