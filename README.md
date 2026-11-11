@@ -38,8 +38,8 @@ Actualmente continúo mi formación en ciberseguridad y redes, mientras desarrol
 Proyecto de diseño y ejecución de pruebas sobre una plataforma de comercio electrónico.
 
 - Diseño de casos de prueba funcionales.
-- Documentación de 27 casos de prueba.
-- Registro de 10 incidencias.
+- Documentación de + 27 casos de prueba.
+- Registro de + 10 incidencias.
 - Priorización de defectos mediante metodología MoSCoW.
 - Análisis de escenarios y criterios de aceptación.
 
@@ -48,7 +48,7 @@ Proyecto de diseño y ejecución de pruebas sobre una plataforma de comercio ele
 Validación de servicios REST mediante Postman.
 
 - Construcción de una colección de pruebas.
-- Validación de más de 7 endpoints.
+- Validación de más de 15 endpoints.
 - Verificación de códigos de respuesta HTTP.
 - Inspección de estructuras JSON.
 - Comprobación de respuestas y comportamiento de los servicios.
@@ -57,7 +57,6 @@ Validación de servicios REST mediante Postman.
 
 Desarrollo de pruebas automatizadas sobre flujos de compra.
 
-- Implementación de 2 pruebas automatizadas.
 - Automatización de escenarios de navegación y compra.
 - Desarrollo y ejecución desde Visual Studio Code.
 - Uso de Python y Selenium.
@@ -108,7 +107,7 @@ Proyecto en desarrollo orientado a la generación de conjuntos de datos y valida
 ## Idiomas
 
 - Español: nativo.
-- Inglés: lectura de documentación técnica.
+- Inglés: Intermedio. Lectura de documentación técnica.
 
 ---
 
