@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Millanel Cosmética — Haute Parfumerie & Care</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            800: '#1e2d42',
+                            900: '#142032',
+                            950: '#0c1524',
+                        },
+                        warm: {
+                            50: '#FAF7F2',
+                            100: '#F5EFE6',
+                            200: '#E8DEC9',
+                            300: '#D5C4A1',
+                            400: '#C2A87D',
+                            500: '#A88B58',
+                        },
+                        rose: {
+                            50: '#FDF8F7',
+                            100: '#F6EAE8',
+                            200: '#E7C7C2',
+                            400: '#C98B82',
+                        },
+                        gold: {
+                            300: '#e0c386',
+                            400: '#d4af37',
+                            500: '#b89228',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(250, 247, 242, 0.88);
+            backdrop-filter: blur(16px);
+        }
+        .editable-active [contenteditable="true"] {
+            outline: 2px dashed #c2a87d !important;
+            padding: 2px 4px;
+            border-radius: 4px;
+            background-color: rgba(212, 175, 55, 0.08);
+        }
+        .editorial-shadow {
+            box-shadow: 0 20px 40px -15px rgba(20, 32, 50, 0.07);
+        }
+    </style>
+</head>
+<body class="bg-warm-50 text-navy-950 font-sans antialiased selection:bg-warm-300 selection:text-navy-950">
+
+    <!-- EDIT MODE CONTROLLER BAR -->
+    <div id="edit-bar" class="bg-navy-950 text-warm-100 text-xs py-2 px-4 sticky top-0 z-50 flex justify-between items-center border-b border-warm-400/30">
+        <div class="flex items-center gap-3">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+            <span class="font-medium tracking-wider text-[11px] uppercase" data-es="MODO EDICIÓN DISPONIBLE" data-en="LIVE EDIT MODE AVAILABLE">MODO EDICIÓN DISPONIBLE</span>
+        </div>
+        <div class="flex items-center gap-3">
+            <button onclick="toggleEditMode()" id="btn-toggle-edit" class="px-3 py-1 bg-warm-400 hover:bg-warm-300 text-navy-950 rounded-md font-semibold transition text-[11px] uppercase tracking-wider">
+                <i class="fa-solid fa-pen-to-square mr-1"></i> <span id="edit-text">Activar Edición</span>
+            </button>
+            <button onclick="downloadWebpage()" class="px-3 py-1 bg-navy-800 hover:bg-navy-900 text-warm-200 border border-warm-300/30 rounded-md transition text-[11px] uppercase tracking-wider">
+                <i class="fa-solid fa-download mr-1"></i> Descargar HTML
+            </button>
+        </div>
+    </div>
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-warm-100/80 border-b border-warm-200 text-navy-900 text-xs py-2.5 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-2 text-[11px] font-medium tracking-wide">
+                <span class="px-2 py-0.5 bg-rose-200 text-navy-900 rounded-full text-[9px] font-bold tracking-widest uppercase" data-es="ÉLITE & CONFORT" data-en="ELITE & COMFORT">ÉLITE & CONFORT</span>
+                <span data-es="Envíos Nacionales e Internacionales Puerta a Puerta" data-en="Nationwide & International Door-to-Door Shipping">Envíos Nacionales e Internacionales Puerta a Puerta</span>
+            </div>
+            
+            <div class="flex items-center gap-4 text-[11px]">
+                <a href="https://wa.me/54903435224418?text=Hola,%20quisiera%20solicitar%20el%20cat%C3%A1logo%20actual%20de%20Millanel" target="_blank" class="flex items-center gap-1.5 font-semibold hover:text-warm-500 transition">
+                    <i class="fa-brands fa-whatsapp text-emerald-600 text-sm"></i>
+                    <span>+54 9 (0343) 5224418</span>
+                </a>
+                <span class="text-warm-300">|</span>
+                <!-- Language Switcher -->
+                <div class="flex items-center gap-1 font-sans text-[10px]">
+                    <button onclick="setLang('es')" id="btn-es" class="px-2 py-0.5 rounded font-bold bg-navy-900 text-warm-50">ES</button>
+                    <button onclick="setLang('en')" id="btn-en" class="px-2 py-0.5 rounded opacity-70 hover:opacity-100 text-navy-900">EN</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <header class="sticky top-[35px] z-40 glass-panel border-b border-warm-200/60 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <svg class="w-9 h-9 text-navy-900 group-hover:scale-105 transition-transform duration-300" viewBox="0 0 100 100" fill="currentColor">
+                    <circle cx="50" cy="50" r="11" />
+                    <circle cx="50" cy="22" r="13" />
+                    <circle cx="50" cy="78" r="13" />
+                    <circle cx="22" cy="50" r="13" />
+                    <circle cx="78" cy="50" r="13" />
+                    <circle cx="30" cy="30" r="11" />
+                    <circle cx="70" cy="30" r="11" />
+                    <circle cx="30" cy="70" r="11" />
+                    <circle cx="70" cy="70" r="11" />
+                </svg>
+                <div class="flex flex-col">
+                    <span class="font-serif text-2xl tracking-[0.25em] font-medium text-navy-900 leading-none">MILLANEL</span>
+                    <span class="text-[9px] tracking-[0.4em] text-warm-500 uppercase font-medium mt-0.5">c o s m é t i c a</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 text-xs tracking-[0.15em] uppercase font-medium text-navy-900">
+                <a href="#catalogos" class="hover:text-warm-500 transition" data-es="Catálogos" data-en="Catalogs">Catálogos</a>
+                <a href="#coleccion" class="hover:text-warm-500 transition" data-es="Experiencia" data-en="Experience">Experiencia</a>
+                <a href="#envios" class="hover:text-warm-500 transition" data-es="Envíos Globales" data-en="Global Shipping">Envíos Globales</a>
+                <a href="#atencion" class="hover:text-warm-500 transition" data-es="Atención Personalizada" data-en="VIP Service">Atención Personalizada</a>
+            </nav>
+
+            <!-- Direct Contact Button -->
+            <a href="https://wa.me/54903435224418?text=Hola,%20quisiera%20solicitar%20el%20nuevo%20cat%C3%A1logo%20de%20la%20campa%C3%B1a" target="_blank" 
+               class="px-6 py-3 bg-navy-900 text-warm-50 rounded-full text-xs font-semibold tracking-widest hover:bg-navy-800 transition shadow-md flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
+                <span data-es="PEDIR CATÁLOGO" data-en="REQUEST CATALOG">PEDIR CATÁLOGO</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-[85vh] flex items-center justify-center py-20 px-4 overflow-hidden bg-gradient-to-b from-warm-50 via-warm-100/50 to-warm-50">
+        <div class="max-w-5xl mx-auto text-center space-y-8 relative z-10">
+            
+            <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-warm-300 bg-white/80 backdrop-blur text-xs tracking-widest text-navy-900 uppercase font-semibold shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-warm-400"></span>
+                <span data-es="ALTA PERFUMERÍA & COSMÉTICA AVANZADA" data-en="HAUTE PERFUMERY & ADVANCED COSMETICS">ALTA PERFUMERÍA & COSMÉTICA AVANZADA</span>
+            </div>
+
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl text-navy-950 font-normal tracking-tight leading-[1.15]">
+                <span class="italic font-serif text-warm-500" data-es="Sofisticación, calidez y belleza" data-en="Sophistication, warmth & beauty">Sofisticación, calidez y belleza</span><br/>
+                <span class="font-medium tracking-wide uppercase text-navy-900 text-3xl sm:text-5xl md:text-6xl block mt-2" data-es="Diseñado para Estándares de Élite" data-en="Crafted for Elite Standards">Diseñado para Estándares de Élite</span>
+            </h1>
+
+            <p class="text-base sm:text-lg text-navy-800/80 max-w-3xl mx-auto font-light leading-relaxed" 
+               data-es="Bienvenido a una experiencia cosmética única. Descubra nuestras fragancias exclusivas, elixires rejuvenecedores y la nueva colección oficial con envíos directos y atención prioritaria."
+               data-en="Welcome to a unique cosmetics experience. Discover signature fragrances, rejuvenating elixirs, and our new official campaign with direct delivery and VIP advisory.">
+                Bienvenido a una experiencia cosmética única. Descubra nuestras fragancias exclusivas, elixires rejuvenecedores y la nueva colección oficial con envíos directos y atención prioritaria.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="#catalogos" 
+                   class="w-full sm:w-auto px-9 py-4 bg-navy-900 text-warm-50 rounded-full text-xs font-semibold tracking-widest hover:bg-navy-800 transition shadow-xl uppercase"
+                   data-es="EXPLORAR NUEVA CAMPAÑA" data-en="EXPLORE NEW CAMPAIGN">
+                    EXPLORAR NUEVA CAMPAÑA
+                </a>
+                <a href="https://wa.me/54903435224418?text=Hola,%20deseo%20asesoramiento%20personalizado%20sobre%20los%20productos%20Millanel" target="_blank"
+                   class="w-full sm:w-auto px-9 py-4 bg-white border border-warm-300 text-navy-900 rounded-full text-xs font-semibold tracking-widest hover:bg-warm-100 transition shadow-sm uppercase flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg text-emerald-600"></i>
+                    <span data-es="ASESORÍA POR WHATSAPP" data-en="WHATSAPP ADVISORY">ASESORÍA POR WHATSAPP</span>
+                </a>
+            </div>
+
+            <!-- Features Banner -->
+            <div class="pt-12 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
+                <div class="p-5 rounded-2xl bg-white/70 backdrop-blur border border-warm-200/80 shadow-sm">
+                    <div class="text-[10px] text-warm-500 uppercase tracking-widest font-semibold" data-es="Edición Activa" data-en="Active Edition">Edición Activa</div>
+                    <div class="font-serif text-xl font-medium text-navy-900 mt-0.5" data-es="Nueva Campaña" data-en="New Campaign">Nueva Campaña</div>
+                </div>
+                <div class="p-5 rounded-2xl bg-white/70 backdrop-blur border border-warm-200/80 shadow-sm">
+                    <div class="text-[10px] text-warm-500 uppercase tracking-widest font-semibold" data-es="Atención Directa" data-en="Direct Line">Atención Directa</div>
+                    <div class="font-serif text-xl font-medium text-navy-900 mt-0.5">+54 9 0343 5224418</div>
+                </div>
+                <div class="p-5 rounded-2xl bg-white/70 backdrop-blur border border-warm-200/80 shadow-sm">
+                    <div class="text-[10px] text-warm-500 uppercase tracking-widest font-semibold" data-es="Compromiso" data-en="Commitment">Compromiso</div>
+                    <div class="font-serif text-xl font-medium text-navy-900 mt-0.5" data-es="Calidad & Pureza" data-en="Quality & Purity">Calidad & Pureza</div>
+                </div>
+                <div class="p-5 rounded-2xl bg-white/70 backdrop-blur border border-warm-200/80 shadow-sm">
+                    <div class="text-[10px] text-warm-500 uppercase tracking-widest font-semibold" data-es="Cobertura" data-en="Coverage">Cobertura</div>
+                    <div class="font-serif text-xl font-medium text-navy-900 mt-0.5" data-es="Envíos Garantizados" data-en="Guaranteed Delivery">Envíos Garantizados</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATALOGS & CAMPAIGNS SECTION -->
+    <section id="catalogos" class="py-24 bg-white border-y border-warm-200/60 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <span class="text-xs font-semibold tracking-[0.2em] uppercase text-warm-500" data-es="CATÁLOGOS DIGITALES EXCLUSIVOS" data-en="EXCLUSIVE DIGITAL CATALOGS">CATÁLOGOS DIGITALES EXCLUSIVOS</span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-navy-950 font-normal" data-es="Catálogos de la Nueva Campaña" data-en="New Campaign Catalogs">Catálogos de la Nueva Campaña</h2>
+                <p class="text-navy-800/70 text-sm leading-relaxed" data-es="Obtenga acceso instantáneo a nuestros catálogos digitales interactivos o póngase en contacto directamente para asesoría personalizada." data-en="Get instant access to our interactive digital catalogs or contact us directly for personal consultation.">
+                    Obtenga acceso instantáneo a nuestros catálogos digitales interactivos o póngase en contacto directamente para asesoría personalizada.
+                </p>
+            </div>
+
+            <!-- Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Catalog Card 1 -->
+                <div class="group border border-warm-200 rounded-3xl p-8 bg-warm-50/50 hover:bg-navy-950 hover:text-warm-50 transition duration-500 flex flex-col justify-between editorial-shadow">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="text-[10px] uppercase tracking-widest px-3 py-1 bg-warm-200 text-navy-900 group-hover:bg-warm-400 group-hover:text-navy-950 rounded-full font-bold">OFICIAL 2026</span>
+                            <i class="fa-solid fa-book-open text-2xl text-warm-500"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl mb-3 group-hover:text-white" data-es="Catálogo Principal Completo" data-en="Full Main Catalog">Catálogo Principal Completo</h3>
+                        <p class="text-xs text-navy-800/70 group-hover:text-warm-100/80 mb-6 leading-relaxed"
+                           data-es="Línea íntegra de perfumería fina, tratamientos faciales, dermocosmética avanzada y maquillaje profesional."
+                           data-en="Comprehensive range of fine perfumes, facial treatments, advanced skincare, and professional cosmetics.">
+                            Línea íntegra de perfumería fina, tratamientos faciales, dermocosmética avanzada y maquillaje profesional.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/54903435224418?text=Hola,%20deseo%20recibir%20el%20Cat%C3%A1logo%20Principal%20de%20la%20nueva%20campa%C3%B1a" target="_blank"
+                       class="w-full py-4 rounded-2xl border border-navy-900 group-hover:border-warm-400 group-hover:bg-warm-400 group-hover:text-navy-950 text-xs font-semibold tracking-widest text-center transition flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                        <span data-es="SOLICITAR CATÁLOGO PRINCIPAL" data-en="REQUEST MAIN CATALOG">SOLICITAR CATÁLOGO PRINCIPAL</span>
+                    </a>
+                </div>
+
+                <!-- Catalog Card 2 -->
+                <div class="group border border-warm-200 rounded-3xl p-8 bg-warm-50/50 hover:bg-navy-950 hover:text-warm-50 transition duration-500 flex flex-col justify-between editorial-shadow">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="text-[10px] uppercase tracking-widest px-3 py-1 bg-warm-200 text-navy-900 group-hover:bg-warm-400 group-hover:text-navy-950 rounded-full font-bold">ALTA PERFUMERÍA</span>
+                            <i class="fa-solid fa-spray-can-sparkles text-2xl text-warm-500"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl mb-3 group-hover:text-white" data-es="Guía de Fragancias & Esencias" data-en="Fragrances & Essences Guide">Guía de Fragancias & Esencias</h3>
+                        <p class="text-xs text-navy-800/70 group-hover:text-warm-100/80 mb-6 leading-relaxed"
+                           data-es="Selección curada con notas olfativas, esencias de edición limitada e inspiraciones internacionales exclusivas."
+                           data-en="Curated selection of olfactory notes, limited edition essences, and exclusive international inspirations.">
+                            Selección curada con notas olfativas, esencias de edición limitada e inspiraciones internacionales exclusivas.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/54903435224418?text=Hola,%20deseo%20recibir%20el%20cat%C3%A1logo%20de%20Fragancias%20y%20Perfumer%C3%ADa" target="_blank"
+                       class="w-full py-4 rounded-2xl border border-navy-900 group-hover:border-warm-400 group-hover:bg-warm-400 group-hover:text-navy-950 text-xs font-semibold tracking-widest text-center transition flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                        <span data-es="PEDIR GUÍA DE PERFUMES" data-en="REQUEST PERFUME GUIDE">PEDIR GUÍA DE PERFUMES</span>
+                    </a>
+                </div>
+
+                <!-- Catalog Card 3 -->
+                <div class="group border border-warm-200 rounded-3xl p-8 bg-warm-50/50 hover:bg-navy-950 hover:text-warm-50 transition duration-500 flex flex-col justify-between editorial-shadow">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="text-[10px] uppercase tracking-widest px-3 py-1 bg-warm-200 text-navy-900 group-hover:bg-warm-400 group-hover:text-navy-950 rounded-full font-bold">PROMOS & SETS</span>
+                            <span class="text-[10px] text-warm-500 font-medium tracking-wider">EDICIÓN ÉLITE</span>
+                        </div>
+                        <h3 class="font-serif text-2xl mb-3 group-hover:text-white" data-es="Sets de Regalo & Ofertas" data-en="Gift Sets & Offers">Sets de Regalo & Ofertas</h3>
+                        <p class="text-xs text-navy-800/70 group-hover:text-warm-100/80 mb-6 leading-relaxed"
+                           data-es="Kits exclusivos de regalo, colecciones estacionales y combos especiales para cuidado corporal y facial."
+                           data-en="Exclusive gift sets, seasonal collections, and special combos for body and facial care.">
+                            Kits exclusivos de regalo, colecciones estacionales y combos especiales para cuidado corporal y facial.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/54903435224418?text=Hola,%20quisiera%20consultar%20por%20los%20Sets%20de%20Regalo%20y%20Promociones" target="_blank"
+                       class="w-full py-4 rounded-2xl border border-navy-900 group-hover:border-warm-400 group-hover:bg-warm-400 group-hover:text-navy-950 text-xs font-semibold tracking-widest text-center transition flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                        <span data-es="VER SETS Y PROMOCIONES" data-en="VIEW SETS & PROMOTIONS">VER SETS Y PROMOCIONES</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SHIPPING & LOGISTICS SECTION -->
+    <section id="envios" class="py-24 bg-warm-50 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-xs font-semibold tracking-[0.2em] uppercase text-warm-500" data-es="LOGÍSTICA CONFÍABLE & RÁPIDA" data-en="RELIABLE & FAST LOGISTICS">LOGÍSTICA CONFÍABLE & RÁPIDA</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl text-navy-950 font-normal leading-tight" data-es="Envíos a Todo el País & Cobertura Internacional" data-en="Nationwide Shipping & International Reach">
+                        Envíos a Todo el País & Cobertura Internacional
+                    </h2>
+                    <p class="text-navy-800/80 text-sm leading-relaxed" 
+                       data-es="Nos destacamos por una gestión rápida, segura y transparente. Cada producto es embalado con la máxima protección térmica y estructural para asegurar su impecable presentación."
+                       data-en="We deliver fast, secure, and transparent shipping services. Every item is packed with thermal and structural protection to guarantee flawless presentation upon arrival.">
+                        Nos destacamos por una gestión rápida, segura y transparente. Cada producto es embalado con la máxima protección térmica y estructural para asegurar su impecable presentación.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4 p-5 rounded-2xl bg-white border border-warm-200/80 shadow-sm">
+                            <div class="w-10 h-10 rounded-full bg-warm-100 flex items-center justify-center text-navy-900 shrink-0">
+                                <i class="fa-solid fa-truck-fast text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif text-lg text-navy-950 font-medium" data-es="Despacho Prioritario" data-en="Priority Dispatch">Despacho Prioritario</h4>
+                                <p class="text-xs text-navy-800/70 mt-0.5" data-es="Atención inmediata para pedidos procesados por nuestro WhatsApp oficial." data-en="Immediate processing for orders placed through our official WhatsApp.">Atención inmediata para pedidos procesados por nuestro WhatsApp oficial.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-5 rounded-2xl bg-white border border-warm-200/80 shadow-sm">
+                            <div class="w-10 h-10 rounded-full bg-warm-100 flex items-center justify-center text-navy-900 shrink-0">
+                                <i class="fa-solid fa-shield-halved text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif text-lg text-navy-950 font-medium" data-es="Embalaje de Protección Élite" data-en="Elite Protective Packaging">Embalaje de Protección Élite</h4>
+                                <p class="text-xs text-navy-800/70 mt-0.5" data-es="Sellado de máxima calidad que conserva aromas y textura intactos durante el transporte." data-en="High-grade sealing that preserves scents and textures intact during shipping.">Sellado de máxima calidad que conserva aromas y textura intactos durante el transporte.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-5 rounded-2xl bg-white border border-warm-200/80 shadow-sm">
+                            <div class="w-10 h-10 rounded-full bg-warm-100 flex items-center justify-center text-navy-900 shrink-0">
+                                <i class="fa-solid fa-clipboard-check text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif text-lg text-navy-950 font-medium" data-es="Seguimiento Personalizado" data-en="Personalized Tracking">Seguimiento Personalizado</h4>
+                                <p class="text-xs text-navy-800/70 mt-0.5" data-es="Reciba la guía de envío y atención constante hasta que el producto esté en sus manos." data-en="Receive tracking numbers and dedicated updates until your package arrives.">Reciba la guía de envío y atención constante hasta que el producto esté en sus manos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shipping Form Card -->
+                <div class="lg:col-span-6 bg-navy-950 text-warm-50 p-8 sm:p-12 rounded-3xl space-y-8 shadow-2xl relative overflow-hidden">
+                    <div class="border-b border-navy-800 pb-6">
+                        <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-warm-400" data-es="CONSULTA RÁPIDA DE ENVÍO" data-en="QUICK SHIPPING INQUIRY">CONSULTA RÁPIDA DE ENVÍO</span>
+                        <h3 class="font-serif text-2xl sm:text-3xl mt-1 text-white" data-es="Cotizar Envío o Consultar Stock" data-en="Quote Shipping or Check Stock">Cotizar Envío o Consultar Stock</h3>
+                    </div>
+
+                    <form id="shipping-form" onsubmit="handleShippingForm(event)" class="space-y-5">
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-warm-200/80 mb-2" data-es="Destino (Ciudad / Provincia / País):" data-en="Destination (City / State / Country):">Destino (Ciudad / Provincia / País):</label>
+                            <input type="text" id="dest-input" required placeholder="Ej. Paraná, Entre Ríos" class="w-full bg-navy-900 border border-navy-800 focus:border-warm-400 px-4 py-3.5 rounded-xl text-white text-sm outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-warm-200/80 mb-2" data-es="Productos o Catálogo Solicitado:" data-en="Products or Catalog Requested:">Productos o Catálogo Solicitado:</label>
+                            <input type="text" id="prod-input" placeholder="Ej. Perfumería Fina, Crema Facial Elixir" class="w-full bg-navy-900 border border-navy-800 focus:border-warm-400 px-4 py-3.5 rounded-xl text-white text-sm outline-none transition">
+                        </div>
+                        <button type="submit" class="w-full py-4 bg-warm-400 hover:bg-warm-300 text-navy-950 font-semibold text-xs tracking-widest uppercase rounded-xl transition flex items-center justify-center gap-2 shadow-lg">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span data-es="CONSULTAR VÍA WHATSAPP" data-en="INQUIRE VIA WHATSAPP">CONSULTAR VÍA WHATSAPP</span>
+                        </button>
+                    </form>
+
+                    <p class="text-[11px] text-warm-200/50 text-center leading-relaxed" data-es="Atención directa inmediata. Le responderemos en minutos." data-en="Immediate direct assistance. We will reply within minutes.">
+                        Atención directa inmediata. Le responderemos en minutos.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- VIP / CLIENT CARE SECTION -->
+    <section id="atencion" class="py-24 bg-white border-t border-warm-200/60 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center space-y-8">
+            
+            <svg class="w-12 h-12 text-navy-900 mx-auto" viewBox="0 0 100 100" fill="currentColor">
+                <circle cx="50" cy="50" r="11" />
+                <circle cx="50" cy="22" r="13" />
+                <circle cx="50" cy="78" r="13" />
+                <circle cx="22" cy="50" r="13" />
+                <circle cx="78" cy="50" r="13" />
+                <circle cx="30" cy="30" r="11" />
+                <circle cx="70" cy="30" r="11" />
+                <circle cx="30" cy="70" r="11" />
+                <circle cx="70" cy="70" r="11" />
+            </svg>
+
+            <h2 class="font-serif text-3xl sm:text-5xl text-navy-950 font-normal" data-es="Atención al Cliente & Asesoría Personalizada" data-en="Customer Support & Dedicated Advisory">
+                Atención al Cliente & Asesoría Personalizada
+            </h2>
+
+            <p class="text-base text-navy-800/80 leading-relaxed font-light max-w-2xl mx-auto"
+               data-es="Estamos a su entera disposición para responder consultas sobre catálogos, pedidos mayoristas, ventas directas o asesoramiento cosmetológico personalizado."
+               data-en="We are at your full disposal to answer inquiries regarding catalogs, wholesale orders, direct sales, or personalized cosmetic skin care advice.">
+                Estamos a su entera disposición para responder consultas sobre catálogos, pedidos mayoristas, ventas directas o asesoramiento cosmetológico personalizado.
+            </p>
+
+            <div class="p-8 bg-warm-50 border border-warm-200 rounded-3xl inline-block max-w-xl w-full shadow-sm">
+                <div class="text-[11px] uppercase tracking-[0.2em] text-warm-500 font-semibold mb-2" data-es="LÍNEA OFICIAL DE ATENCIÓN DIRECTA" data-en="OFFICIAL DIRECT SERVICE LINE">LÍNEA OFICIAL DE ATENCIÓN DIRECTA</div>
+                <div class="font-serif text-3xl sm:text-4xl text-navy-950 font-medium my-3">+54 9 (0343) 5224418</div>
+                <div class="text-xs text-emerald-700 font-semibold uppercase tracking-wider mb-8 flex items-center justify-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span data-es="RESPUESTA RÁPIDA GARANTIZADA" data-en="GUARANTEED FAST RESPONSE">RESPUESTA RÁPIDA GARANTIZADA</span>
+                </div>
+                
+                <a href="https://wa.me/54903435224418?text=Hola,%20quisiera%20recibir%20atenci%C3%B3n%20personalizada" target="_blank"
+                   class="w-full py-4 bg-navy-900 hover:bg-navy-800 text-warm-50 rounded-2xl text-xs font-semibold tracking-widest uppercase transition flex items-center justify-center gap-2 shadow-md">
+                    <i class="fa-brands fa-whatsapp text-lg text-emerald-400"></i>
+                    <span data-es="CONTACTAR POR WHATSAPP" data-en="CONTACT VIA WHATSAPP">CONTACTAR POR WHATSAPP</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-950 text-warm-100 py-16 border-t border-navy-900 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <span class="font-serif text-2xl tracking-[0.25em] font-medium text-white">MILLANEL</span>
+                <span class="text-[9px] tracking-[0.4em] text-warm-400 block uppercase mt-1">c o s m é t i c a</span>
+                <p class="text-xs text-warm-200/60 mt-3 max-w-sm font-light" data-es="Perfumería de vanguardia, cosmética avanzada y soluciones integrales de cuidado." data-en="Cutting-edge perfumery, advanced cosmetics, and holistic care solutions.">
+                    Perfumería de vanguardia, cosmética avanzada y soluciones integrales de cuidado.
+                </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center gap-6 text-xs text-warm-200/80 font-medium">
+                <a href="#catalogos" class="hover:text-warm-400 transition" data-es="Catálogos" data-en="Catalogs">Catálogos</a>
+                <a href="#envios" class="hover:text-warm-400 transition" data-es="Envíos" data-en="Shipping">Envíos</a>
+                <a href="https://wa.me/54903435224418" target="_blank" class="hover:text-warm-400 transition">WhatsApp Directo: +54 9 (0343) 5224418</a>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto border-t border-navy-900 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center text-[10px] text-warm-200/40 gap-4">
+            <div>© 2026 MILLANEL COSMÉTICA. TODOS LOS DERECHOS RESERVADOS.</div>
+            <div class="flex items-center gap-4">
+                <span data-es="EXCELENCIA & GARANTÍA" data-en="EXCELLENCE & GUARANTEE">EXCELENCIA & GARANTÍA</span>
+                <span>•</span>
+                <span data-es="ALTA COSMÉTICA" data-en="HIGH COSMETICS">ALTA COSMÉTICA</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/54903435224418?text=Hola,%20quisiera%20solicitar%20el%20nuevo%20cat%C3%A1logo%20de%20la%20campa%C3%B1a" 
+       target="_blank" 
+       class="fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-500 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-3xl transition transform hover:scale-110"
+       title="WhatsApp Directo">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- SCRIPTS FOR LANGUAGE, EDITABILITY AND DOWNLOAD -->
+    <script>
+        let currentLang = 'es';
+        let isEditMode = false;
+
+        function setLang(lang) {
+            currentLang = lang;
+            const elements = document.querySelectorAll('[data-es]');
+            
+            elements.forEach(el => {
+                if (lang === 'en' && el.getAttribute('data-en')) {
+                    el.innerText = el.getAttribute('data-en');
+                } else if (lang === 'es' && el.getAttribute('data-es')) {
+                    el.innerText = el.getAttribute('data-es');
+                }
+            });
+
+            const btnEs = document.getElementById('btn-es');
+            const btnEn = document.getElementById('btn-en');
+
+            if (lang === 'es') {
+                btnEs.className = "px-2 py-0.5 rounded font-bold bg-navy-900 text-warm-50";
+                btnEn.className = "px-2 py-0.5 rounded opacity-70 hover:opacity-100 text-navy-900";
+            } else {
+                btnEn.className = "px-2 py-0.5 rounded font-bold bg-navy-900 text-warm-50";
+                btnEs.className = "px-2 py-0.5 rounded opacity-70 hover:opacity-100 text-navy-900";
+            }
+        }
+
+        function toggleEditMode() {
+            isEditMode = !isEditMode;
+            document.body.classList.toggle('editable-active', isEditMode);
+            
+            const editables = document.querySelectorAll('h1, h2, h3, h4, p, span, a');
+            editables.forEach(el => {
+                if (el.closest('#edit-bar')) return;
+                el.contentEditable = isEditMode ? "true" : "false";
+            });
+
+            const btnText = document.getElementById('edit-text');
+            const btnToggle = document.getElementById('btn-toggle-edit');
+            
+            if (isEditMode) {
+                btnText.innerText = 'Guardar / Desactivar';
+                btnToggle.className = "px-3 py-1 bg-emerald-500 text-white rounded-md font-semibold transition text-[11px] uppercase tracking-wider";
+            } else {
+                btnText.innerText = 'Activar Edición';
+                btnToggle.className = "px-3 py-1 bg-warm-400 hover:bg-warm-300 text-navy-950 rounded-md font-semibold transition text-[11px] uppercase tracking-wider";
+            }
+        }
+
+        function handleShippingForm(e) {
+            e.preventDefault();
+            const dest = document.getElementById('dest-input').value;
+            const prod = document.getElementById('prod-input').value;
+            const msg = `Hola,%20quisiera%20consultar%20disponibilidad%20y%20env%C3%ADo%20para%20la%20ciudad:%20${encodeURIComponent(dest)}.%20Producto/Cat%C3%A1logo:%20${encodeURIComponent(prod)}`;
+            window.open(`https://wa.me/54903435224418?text=${msg}`, '_blank');
+        }
+
+        function downloadWebpage() {
+            // Remove edit bar temporary state before saving clean copy
+            const cloneDoc = document.documentElement.cloneNode(true);
+            const editBar = cloneDoc.querySelector('#edit-bar');
+            if (editBar) editBar.remove();
+
+            const htmlContent = '<!DOCTYPE html>\n' + cloneDoc.outerHTML;
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'millanel_cosmetica_oficial.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
